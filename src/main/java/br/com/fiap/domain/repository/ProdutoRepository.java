@@ -48,6 +48,12 @@ public class ProdutoRepository implements Repository<Produto, Long> {
         }
         return retorno;
     }
+    //Aqui estamos adicionando um produto na lista e falando que o id dele é o ultimo + 1
+    public static Produto persist(Produto p){
+        p.setId(produtos.size()+1L);
+        produtos.add(p);
+        return p;
+    }
 
     public Produto persist(Produto p) {
         p.setId( produtos.size() + 1L );
